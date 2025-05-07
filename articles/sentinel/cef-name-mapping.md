@@ -29,9 +29,9 @@ The following tables map Common Event Format (CEF) field names to the names they
 
 |CEF key name  |CommonSecurityLog name  |Description  |
 |---------|---------|---------|
-|Device Vendor     |  DeviceVendor       | String that, together with device product and version definitions, uniquely identifies the type of sending device.       |
-|Device Product     |   DeviceProduct      |   String that, together with device vendor and version definitions, uniquely identifies the type of sending device.        |
-|Device Version     |   DeviceVersion      |      String that, together with device product and vendor definitions, uniquely identifies the type of sending device.     |
+| deviceVendor     |  DeviceVendor       | String that, together with device product and version definitions, uniquely identifies the type of sending device.       |
+| deviceProduct     |   DeviceProduct      |   String that, together with device vendor and version definitions, uniquely identifies the type of sending device.        |
+| deviceVersion     |   DeviceVersion      |      String that, together with device product and vendor definitions, uniquely identifies the type of sending device.     |
 | destinationDnsDomain    | DestinationDnsDomain        |   The DNS part of the fully qualified domain name (FQDN).      |
 | destinationServiceName | DestinationServiceName | The service that is targeted by the event. For example, `sshd`.|
 | destinationTranslatedAddress | DestinationTranslatedAddress | Identifies the translated destination referred to by the event in an IP network, as an IPv4 IP address. |
@@ -39,7 +39,7 @@ The following tables map Common Event Format (CEF) field names to the names they
 | deviceDirection | <a name="communicationdirection"></a> CommunicationDirection | Any information about the direction the observed communication has taken. Valid values: <br>- `0` = Inbound <br>- `1` = Outbound |
 | deviceDnsDomain | DeviceDnsDomain | The DNS domain part of the full qualified domain name (FQDN) |
 |DeviceEventClassID     |   DeviceEventClassID     |   String or integer that serves as a unique identifier per event type.      |
-| deviceExternalId | deviceExternalId | A name that uniquely identifies the device generating the event. |
+| deviceExternalId | deviceExternalID | A name that uniquely identifies the device generating the event. |
 | deviceFacility | DeviceFacility | The facility generating the event.|
 | deviceInboundInterface | DeviceInboundInterface |The interface on which the packet or data entered the device.  |
 | deviceNtDomain | DeviceNtDomain | The Windows domain of the device address |
@@ -48,20 +48,20 @@ The following tables map Common Event Format (CEF) field names to the names they
 | deviceProcessName | ProcessName | Process name associated with the event. <br><br>For example, in UNIX, the process generating the syslog entry. |
 | deviceTranslatedAddress | DeviceTranslatedAddress | Identifies the translated device address that the event refers to, in an IP network. <br><br>The format is an Ipv4 address. |
 | dhost |DestinationHostName | The destination that the event refers to in an IP network.  <br>The format should be an FQDN associated with the destination node, when a node is available. For example, `host.domain.com` or `host`. |
-| dmac | DestinationMacAddress | The destination MAC address (FQDN) |
+| dmac | DestinationMACAddress | The destination MAC address (FQDN) |
 | dntdom | DestinationNTDomain | The Windows domain name of the destination address.|
-| dpid | DestinationProcessId |The ID of the destination process associated with the event.|
+| dpid | Destination![image](https://github.com/user-attachments/assets/2ff40912-8afa-47e1-9dcc-9769e7a83436) |The ID of the destination process associated with the event.|
 | dpriv | DestinationUserPrivileges | Defines the destination use's privileges. <br>Valid values: `Administrator`, `User`, `Guest` |
 | dproc | DestinationProcessName | The name of the event’s destination process, such as `telnetd` or `sshd.` |
 | dpt | DestinationPort | Destination port. <br>Valid values: `*0` - `65535` |
 | dst | DestinationIP | The destination IpV4 address that the event refers to in an IP network. |
 | dtz | DeviceTimeZone | Timezone of the device generating the event |
-| duid |DestinationUserId | Identifies the destination user by ID. |
+| duid |DestinationUserID | Identifies the destination user by ID. |
 | duser | DestinationUserName |Identifies the destination user by name.|
 | dvc | DeviceAddress | The IPv4 address of the device generating the event. |
 | dvchost | DeviceName | The FQDN associated with the device node, when a node is available. For example, `host.domain.com` or `host`.| 
 | dvcmac | DeviceMacAddress | The MAC address of the device generating the event. |
-| dvcpid | Process ID | Defines the ID of the process on the device generating the event. |
+| dvcpid | ProcessID | Defines the ID of the process on the device generating the event. |
 
 ## E - I
 
@@ -89,7 +89,7 @@ The following tables map Common Event Format (CEF) field names to the names they
 |Name     |  Activity       |   A string that represents a human-readable and understandable description of the event.     |
 |oldFileCreateTime     |  OldFileCreateTime       | Time when the old file was created.        |
 |oldFileHash     |   OldFileHash      |   Hash of the old file.      |
-|oldFileId     |   OldFileId     |   And ID associated with the old file, such as the inode.      |
+|oldFileId     |   OldFileID     |   And ID associated with the old file, such as the inode.      |
 | oldFileModificationTime | OldFileModificationTime |Time when the old file was last modified. |
 | oldFileName |  OldFileName |Name of the old file. |
 | oldFilePath | OldFilePath | Full path to the old file, including the filename. <br>For example, `C:\ProgramFiles\WindowsNT\Accessories\wordpad.exe` or `/usr/bin/zip`.|
@@ -114,7 +114,7 @@ The following tables map Common Event Format (CEF) field names to the names they
 | rt | ReceiptTime | The time at which the event related to the activity was received. |
 |Severity     |  <a name="logseverity"></a> LogSeverity       |  A string or integer that describes the importance of the event.<br><br> Valid string values: `Unknown` , `Low`, `Medium`, `High`, `Very-High` <br><br>Valid integer values are:<br> - `0`-`3` = Low <br>- `4`-`6` = Medium<br>- `7`-`8` = High<br>- `9`-`10` = Very-High |
 | shost    | SourceHostName        |Identifies the source that event refers to in an IP network. Format should be a fully qualified domain name (FQDN) associated with the source node, when a node is available. For example, `host` or `host.domain.com`. |
-| smac | SourceMacAddress | Source MAC address. |
+| smac | SourceMACAddress | Source MAC address. |
 | sntdom | SourceNTDomain | The Windows domain name for the source address. |
 | sourceDnsDomain | SourceDnsDomain | The DNS domain part of the complete FQDN. |
 | sourceServiceName | SourceServiceName | The service responsible for generating the event. |
